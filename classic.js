@@ -297,7 +297,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : 
 "mediaKeyTimestamp": "1684161893"
 }}}
 const reply = (teks) => {
-return zetsubo.sendMessage(from, { text: teks, contextInfo:{"externalAdReply": {"title": `༐༑⿻𝐒⸙𝐀࿈𝐌.𝐕𖤓𝐕𝐢𝐒𝐢𝐎𝐍⿻༔༐༑ - ${botname}`,"body": `Selamat ${salam2} kak ${pushname}`, "previewType": "PHOTO","thumbnailUrl": 'https://telegra.ph/file/565f8fc3e0cffb4a7ffd4.jpg',"thumbnail": thumbnail,"sourceUrl": `https://www.instagram.com/ano_nymous_sam?utm_source=qr&igsh=MzNlNGNkZWQ4Mg==`}}}, { quoted:m})} 
+return zetsubo.sendMessage(from, { text: teks, contextInfo:{"externalAdReply": {"title": `༐༑⿻𝐒⸙𝐀࿈𝐌.𝐕𖤓𝐕𝐢𝐒𝐢𝐎𝐍⿻༔༐༑ - ${botname}`,"body": `Selamat ${salam2} kak ${pushname}`, "previewType": "PHOTO","thumbnailUrl": 'https://telegra.ph/file/565f8fc3e0cffb4a7ffd4.jpg',"thumbnail": thumbnail,"sourceUrl": `https://www.instagram.com/_.adrienxd?igsh=MTBiZHJ0eXNsNGJ6OA==`}}}, { quoted:m})} 
 
 const zetsreply = async (teks) => {
 	    zetsubo.sendMessage(from, { text:teks, contextInfo: {externalAdReply : {
@@ -305,7 +305,7 @@ const zetsreply = async (teks) => {
         body : `⧉⸙𝐋⚔𝐎᪥𝐑ᚘ𝐃ᚗ𝐒⸙𝐀࿈𝐌⸙⧉`,
         renderLargerThumbnail:false,
         showAdAttribution: true, 
-        mediaUrl: `https://www.instagram.com/ano_nymous_sam?utm_source=qr&igsh=MzNlNGNkZWQ4Mg`,
+        mediaUrl: `https://www.instagram.com/_.adrienxd?igsh=MTBiZHJ0eXNsNGJ6OA==`,
         mediaType: 2, 
         thumbnail:sangean
         }}}, { quoted: zets })}
@@ -316,7 +316,7 @@ const virgamreply = async (teks) => {
         body : `⧉⸙𝐋⚔𝐎᪥𝐑ᚘ𝐃ᚗ𝐒⸙𝐀࿈𝐌⸙⧉⸙⫺`,
         renderLargerThumbnail:false,
         showAdAttribution: true, 
-        mediaUrl: `https://www.instagram.com/ano_nymous_sam?utm_source=qr&igsh=MzNlNGNkZWQ4Mg==`,
+        mediaUrl: `https://www.instagram.com/_.adrienxd?igsh=MTBiZHJ0eXNsNGJ6OA==`,
         mediaType: 2, 
         thumbnail:virgam
         }}}, { quoted: kalgans })}
@@ -327,7 +327,7 @@ const genreply = async (teks) => {
         body : `⧉⸙𝐋⚔𝐎᪥𝐑ᚘ𝐃ᚗ𝐒⸙𝐀࿈𝐌⸙⧉`,
         renderLargerThumbnail:false,
         showAdAttribution: true, 
-        mediaUrl: `https://www.instagram.com/ano_nymous_sam?utm_source=qr&igsh=MzNlNGNkZWQ4Mg==`,
+        mediaUrl: `https://www.instagram.com/_.adrienxd?igsh=MTBiZHJ0eXNsNGJ6OA==`,
         mediaType: 2, 
         thumbnail:hinachan
         }}}, { quoted: zets })} 
@@ -498,13 +498,13 @@ fs.writeFileSync('./database/user.json', JSON.stringify(pengguna, null, 2))
 // Anti Link
 if (AntiLink) {
 if (body.match(/(chat.whatsapp.com\/)/gi)) {
-if (!isBotAdmins) return reply(`${mess.botAdmin}, _Untuk menendang orang yang mengirim link group_`)
+if (!isBotAdmins) return reply(`${mess.botAdmin}, _Kick the person for sending group links_`)
 let gclink = (`https://chat.whatsapp.com/`+await zetsubo.groupInviteCode(m.chat))
 let isLinkThisGc = new RegExp(gclink, 'i')
 let isgclink = isLinkThisGc.test(m.text)
-if (isgclink) return zetsubo.sendMessage(m.chat, {text: `\`\`\`「 Group Link Terdeteksi 」\`\`\`\n\nAnda tidak akan ditendang oleh bot karena yang Anda kirim adalah link ke grup ini`})
-if (isAdmins) return zetsubo.sendMessage(m.chat, {text: `\`\`\`「 Group Link Terdeteksi 」\`\`\`\n\nAdmin sudah mengirimkan link, admin bebas memposting link apapun`})
-if (isCreator) return zetsubo.sendMessage(m.chat, {text: `\`\`\`「 Group Link Terdeteksi 」\`\`\`\n\nOwner telah mengirim link, owner bebas memposting link apa pun`})
+if (isgclink) return zetsubo.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nLinks are not allowed, you will be kicked`})
+if (isAdmins) return zetsubo.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent Group Link 😇, admin is free to post any link`})
+if (isCreator) return zetsubo.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\nOwner has sent a link 🥰, owner is free to post any link`})
 await zetsubo.sendMessage(m.chat,
 {
 delete: {
@@ -514,7 +514,7 @@ id: mek.key.id,
 participant: mek.key.participant
 }
 })
-zetsubo.sendMessage(from, {text:`\`\`\`「 Group Link Terdeteksi 」\`\`\`\n\n@${m.sender.split("@")[0]} Jangan kirim group link di group ini`, contextInfo:{mentionedJid:[sender]}}, {quoted:hw})
+zetsubo.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Don't send group links to this group`, contextInfo:{mentionedJid:[sender]}}, {quoted:hw})
 }
 }
 //=================================================//
@@ -978,8 +978,8 @@ let messg = `
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     \`𝘾𝙇𝘼𝙎𝙎𝙄𝘾-𝙑3 𝘽𝙐𝙂\`
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-   ✰ 𝐒𝐜 𝐏𝐮𝐛𝐥𝐢𝐜 ❴ 𝐵𝑌 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 ❵
-   ✰ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒
+   ✰ 𝐒𝐜 𝐏𝐮𝐛𝐥𝐢𝐜 ❴ 𝐵𝑦 𝚫𝐃𝐑𝐈𝚵𝚴 ❵
+   ✰ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: 𝚫𝐃𝐑𝐈𝚵𝚴
    ✰ 𝐔𝐬𝐞𝐫 : @${m.sender.split('@')[0]}
  
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -1002,7 +1002,7 @@ let messg = `
      ⦁𝐌𝐞𝐧𝐮𝐭𝐲𝐩𝐞
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬     
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-©𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 `
+©𝚫𝐃𝐑𝐈𝚵𝚴 `
 
 global.logo = "https://telegra.ph/file/6dfde4263655a81572a68.jpg"
 global.vidmenu = "https://telegra.ph/file/a45bcd846c54a1a52fd2a.mp4"
@@ -1050,7 +1050,7 @@ case 'bugmenu': {
 ┃➢ 𝐛𝐮𝐠𝐥𝐢𝐬𝐭
 ┗━━━━━━━━━━━━━━━━━━
 
-©𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 
+©𝚫𝐃𝐑𝐈𝚵𝚴 
  
 `
 let hiks = {
@@ -1235,7 +1235,7 @@ let hiks = {
 image: cewegw, 
   caption: ewe,
   contextInfo:{externalAdReply:{
-  title: '𒑰᚜ 𝐇𝐚𝐢𝐥 𝐭𝐨 𝐊𝐢𝐧𝐠 𝐒𝐚𝐦 ᚛⿻',
+  title: '𒑰᚜ 𝚫𝐃𝐑𝐈𝚵𝚴 ᚛⿻',
   body: '༐༑⿻⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺༔༐༑', 
   showAdAttribution: true,
   thumbnail:hinachan,
@@ -1250,7 +1250,7 @@ break
 case 'Islammenu': {
 
                             ewe = ` *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧*
-┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
+┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝚫𝐃𝐑𝐈𝚵𝚴 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
 ┃  ➥𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : @${m.sender.split('@')[0]}
 ┃
@@ -1305,7 +1305,7 @@ break
 case 'textmaker': {
 
                             ewe = `┏━━━❰ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3* ❱━━━━━━ 
-┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
+┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝚫𝐃𝐑𝐈𝚵𝚴 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
 ┃  ➥𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : @${m.sender.split('@')[0]}
 ┃
@@ -1627,7 +1627,7 @@ break
 case 'cucimata': {
 
                             ewe = `┏━━━▓ *𝗖𝗟𝗔𝗦𝗦𝗜𝗖-𝗩3 𝗕𝗢𝗧* ▓━━━━━━━
-┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝑆𝐴𝑀 ❵
+┃  ➥𝐒𝐜 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 ❴ 𝐵𝑌 𝚫𝐃𝐑𝐈𝚵𝚴 ❵
 ┃  ➥ 𝐔𝐬𝐞𝐫 : ${pushname}}
 ┃  ➥𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : @${m.sender.split('@')[0]}
 ┃
@@ -1775,7 +1775,7 @@ text: `𝑯𝒆𝒍𝒍𝒐 ${pushname}
  ⦁ 𝐋𝐨𝐫𝐝 𝐓𝐚𝐢𝐫𝐚 ⥈ 𝐍𝐢𝐠𝐞𝐫𝐢𝐚 🇳🇬
  ➢ 𝐀𝐝𝐝𝐞𝐝 𝐭𝐡𝐞 𝐦𝐞𝐧𝐮 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐭𝐨 𝐦𝐚𝐤𝐞 𝐭𝐡𝐞 𝐛𝐨𝐭 𝐦𝐨𝐫𝐞 𝐟𝐚𝐧𝐜𝐲
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
- ⦁ 𝐄𝐦𝐩𝐨𝐫𝐨𝐫 𝐋𝐨𝐫𝐝
+ ⦁ 𝚫𝐃𝐑𝐈𝚵𝚴
  ➢ 𝐅𝐨𝐫 𝐚𝐝𝐝𝐢𝐧𝐠 𝐠𝐢𝐭𝐡𝐮𝐛 𝐖𝐨𝐫𝐤𝐟𝐥𝐨𝐰 𝐟𝐨𝐫 𝐞𝐚𝐬𝐲 𝐝𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
  ⦁ 𝐓𝐡𝐚𝐧𝐤𝐬 𝐭𝐨 ${pushname} 
@@ -2550,7 +2550,7 @@ mediaType: 1,
 mediaUrl: `${global.url}`
 }
 },
-text: '📡𝗬𝗼𝘂 𝗖𝗮𝗻 𝗖𝗼𝗽𝘆 𝗕𝘂𝘁 𝗬𝗼𝘂 𝗖𝗮𝗻𝘁 𝗯𝗲 𝗠𝗲 🙃 𝗖𝗮𝗹𝗹 𝗠𝗲 𝕶𝖎𝖓𝖌 𝕾𝖆𝖒 🩸'
+text: '📡𝗬𝗼𝘂 𝗖𝗮𝗻 𝗖𝗼𝗽𝘆 𝗕𝘂𝘁 𝗬𝗼𝘂 𝗖𝗮𝗻𝘁 𝗯𝗲 𝗠𝗲 🙃 𝗖𝗮𝗹𝗹 𝗠𝗲 𝚫𝐃𝐑𝐈𝚵𝚴 🩸'
 }, {
 quoted: m
 })
