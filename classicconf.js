@@ -22,17 +22,17 @@ const fs = require('fs')
 const chalk = require('chalk')
 
 global.gr = 'https://chat.whatsapp.com/EZjCgLTJfRd8LHOyVC163u'
-global.ig = 'ano_nymous_sam' // ubah aja
-global.email = 'samuelcircute@gmail.com' //serah
+global.ig = '_.adrienxd' // ubah aja
+global.email = 'arbe0243@gmail.com' //serah
 global.region = 'Hindu' // serah
 //—————「 Set Nama Own & Bot 」—————//
-global.ownername = '𝆺𝅥 𝇁 ֹ  𝄄 س ꓹ 𝚫𝐃𝐑𝐈𝚵𝚴 𓂃🧣' //ubah jadi nama mu, note tanda ' gausah di hapus!
+global.ownername = '𝚫𝐃𝐑𝐈𝚵𝚴' //ubah jadi nama mu, note tanda ' gausah di hapus!
 //=================================================//
-global.owner = ['917439317360'] // ubah aja pake nomor lu
+global.owner = ['994402259688'] // ubah aja pake nomor lu
 //==========================zetsuboclient=======================//
 global.botname = '⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺' //ubah jadi nama bot mu, note tanda ' gausah di hapus!
 global.packname = '⫹⸙⧉𝐂𝐋𝐀𝐒𝐒𝐈𝐂-𝐕3⧉⸙⫺' // ubah aja ini nama sticker
-global.author = '𝆺𝅥 𝇁 ֹ  𝄄 س ꓹ 𝚫𝐃𝐑𝐈𝚵𝚴 𓂃🧣' // ubah aja ini nama sticker
+global.author = '𝚫𝐃𝐑𝐈𝚵𝚴' // ubah aja ini nama sticker
 global.prefa = ['+','!','.','/','🐤','🗿']
 global.sessionName = 'classicsession'  //Gausah Juga
 global.sp = '⭔' // Gausah Juga
